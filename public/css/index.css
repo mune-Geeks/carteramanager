@@ -1,0 +1,80 @@
+.index_title { 
+    color: black; 
+    text-align: left;
+    font-size: x-large;
+    background-image: none;
+    background-color: rgb(121, 201, 233);
+    height: 40px;
+    width: 100%;
+    position: fixed;
+    top: 0;
+}
+.index_title2 {
+   
+    padding-left: 5%;
+}
+.index_body_1 {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+}
+.index_body_2 {
+    width: 100%;
+    height: 600px;
+    background-color:;
+    padding-top: 10%;
+    padding-left: 5%;
+}
+.index_body_3 {
+    background-color: ;
+    display: flex;
+    width: 100%;
+    height: 500px;
+}
+.index_img_1 {
+    width: 800px;
+    display: inline;
+}
+.index_body_4 {
+    display: inline-block;
+    width: 100%;
+    height: 500px;
+    background-color: ;
+    padding-top: 120px;
+    padding-left: 10px;
+    font-family: "League Gothic";
+    font-size: large;
+    
+}
+.index_body_5 {
+    width: 100%;
+    height: 100px;
+    background-color: rgb(220, 245, 163);
+}
+.index_body_6 {
+    width: 100%;
+    height: 400px;
+    background-color: white;
+    padding: 5%;
+}
+.index_body_7 {
+    width: 100%;
+    height: 150px;
+    padding: 5%;
+}
+.index_body_8 {
+    width: 100%;
+    height: 450px;
+    padding: 3%;
+}
+footer {
+    width: 100%;
+    height: 80px;
+    background-color: rgb(25, 25, 94);
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
+.index_body_end li{
+    display: inline;
+}
