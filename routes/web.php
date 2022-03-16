@@ -20,6 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::post('/store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
+
 
 Route::get('/index', function() {
     return view('index');
@@ -41,4 +43,4 @@ Route::get('/setting', function() {
     return view('setting');
 });
 
-Route::post('/store', [App\Http\Controllers\HomeController::class, 'store'])->name('home');
+

@@ -18,7 +18,8 @@ return new class extends Migration
             $table->integer('u_id');
             $table->integer('amount');
             $table->date('expense_date');
-            $table->timestamps();
+            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
+            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
         });
     }
 

@@ -22,7 +22,9 @@
         </div>
     </nav>
     <div class="body_2">
-        <form method="POST" action="/home">
+        <form method='POST' action="/store">
+            @csrf
+            <input type="hidden" name="user_id" value="{{ $user ['id'] }}">
             <p>
                 <select name="input_1">
                     <option value="income">INCOME</option>
@@ -31,17 +33,17 @@
             </p>
             <p>
                 <label>AMOUNT&nbsp;&nbsp;&nbsp;</label>
-                <input type="text">
+                <input name="amount" type="text">
             </p>
             <p>
                 <label>CATEGORY</label>
-                <input type="text">
+                <input name="category" type="text">
             </p>
             <p>
                 <label for="">DATE&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
-                <input type="date">
+                <input name="date" type="date">
             </p>
-            <button>SUBMIT</button>
+            <button type="submit">SUBMIT</button>
         </form>
     </div>
 </div>
