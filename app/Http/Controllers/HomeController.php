@@ -29,9 +29,7 @@ class HomeController extends Controller
     public function index()
     {
         $user = \Auth::user();
-        
-        $incomes = ModelsIncome::where()
-
+    
         return view('home',compact('user'));
     }
     public function store(Request $request)
@@ -41,11 +39,11 @@ class HomeController extends Controller
         $type = $data['input_1'];
         if($type == 'income'){
             $input_data = ModelsIncome::insertGetId([
-                'u_id' => $data['user_id'],'amount' => $data['amount'], 'income_date' => $data['date']
+                'u_id' => $data['user_id'],'category' => $data['category'],'amount' => $data['amount'], 'income_date' => $data['date']
             ]);
         } elseif($type == 'expense'){
             $input_data = ModelsExpenses::insertGetId([
-                'u_id' => $data['user_id'],'amount' => $data['amount'], 'expense_date' => $data['date']
+                'u_id' => $data['user_id'],'category' => $data['category'],'amount' => $data['amount'], 'expense_date' => $data['date']
             ]);
         }
         return redirect()->route('home');

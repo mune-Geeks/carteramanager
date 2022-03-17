@@ -1,5 +1,6 @@
 <?php
 
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,7 +23,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
 
-
 Route::get('/index', function() {
     return view('index');
 });
@@ -32,7 +32,12 @@ Route::get('/cartera', function() {
 });
 
 Route::get('/graph', function() {
-    return view('graph');
+    $user = \Auth::user();
+    
+    $incomes = DB::table('income')->where('u_id', $user['id'])-> get();
+    $expenses = DB::table('expenses')->where('u_id',$user['id'])->get();
+
+    return view('graph',['incomes' => $incomes],['expenses' => $expenses]);
 });
 
 Route::get('/calender', function() {
