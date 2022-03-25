@@ -1,5 +1,6 @@
 .body_1 {
     width: 100%;
+    height: auto;
 }
 #home_nav_bar {
     border-bottom: 1px solid rgba(red, green, blue, alpha);
@@ -40,4 +41,9 @@
     width: 100%;
     height: 100%;
     background-color: white;
+}
+.graph_body_graph1 {
+    width: auto;
+    height: auto;
+    background-color:;
 }

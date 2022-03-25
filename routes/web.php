@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
+use app\Http\Controllers\HomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,7 +32,7 @@ Route::get('/cartera', function() {
     return view('home_cm');
 });
 
-Route::get('/graph', function() {
+Route::get('/graph',function() {
     $user = \Auth::user();
     
     $incomes = DB::table('income')->where('u_id', $user['id'])-> get();
@@ -49,3 +50,7 @@ Route::get('/setting', function() {
 });
 
 
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
