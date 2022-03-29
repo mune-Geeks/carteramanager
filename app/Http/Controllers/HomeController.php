@@ -36,7 +36,7 @@ class HomeController extends Controller
     {
         $data = $request->all();
         //dd($data);
-        $type = $data['input_1'];
+        $type = $data['btnradio'];
         if($type == 'income'){
             $input_data = ModelsIncome::insertGetId([
                 'u_id' => $data['user_id'],'category' => $data['category'],'amount' => $data['amount'], 'income_date' => $data['date']
