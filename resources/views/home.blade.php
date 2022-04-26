@@ -2,6 +2,7 @@
 
 @section('content')
 <div class="body_1">
+    
     <nav id="home_nav_bar">
         <div class="nav_bar_2">
             <ul>
@@ -54,7 +55,7 @@
                 <h2>
                     <label>CATEGORY</label>
                     <select name="category" style="width:170px" required>
-                        <option>--------</option>
+                        <option disabled selected value>--------</option>
                         <option id="cate1" value=""></option>
                         <option id="cate2" value=""></option>
                         <option id="cate3" value=""></option>

@@ -36,21 +36,34 @@
         </div>
     </nav>
     <div class="body_2">
-        <div class="card" style="width: auto;">
-            <div class="card-header">
-                SETTING
+        <div class="body-set-1">
+            <div class="card-set">
+                <div class="card-header">
+                    SETTING
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">
+                        <a class="dropdown-item" href="{{ url('/editname') }}">
+                            {{ __('Change Username') }}
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                        <a class="dropdown-item" href="{{ url('/repswd') }}">
+                            {{ __('Change Password') }}
+                        </a>
+                    </li>
+                    <li class="list-group-item">
+                            <a class="dropdown-item" href="{{ route('logout') }}"
+                                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form').submit();">
+                                        {{ __('Logout') }}
+                                    </a>
+                            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                                        @csrf
+                            </form>
+                    </li>
+                </ul>
             </div>
-            <ul class="list-group list-group-flush">
-                <li class="list-group-item">
-                    <a href="">change username</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="">change password</a>
-                </li>
-                <li class="list-group-item">
-                    <a href="">Logout</a>
-                </li>
-            </ul>
         </div>
     </div>
 </div>

@@ -64,6 +64,7 @@
                 <h1>FEATURES</h1>
             </div>
             <div class="index_body_8">
+                <img src="image/design.png" alt="app_image" class="index_img_1">
             </div>
             <footer>
                 <ul class="index_body_end">

@@ -22,7 +22,15 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::post('/store', [App\Http\Controllers\HomeController::class, 'store'])->name('store');
+
+Route::get('/graph', [\App\Http\Controllers\GraphController::class,'index'])->name('home');
+Route::get('/editname', [App\Http\Controllers\Auth\ChangeNameController::class, 'index'])->name('home');
+
+Route::post('/changename',[App\Http\Controllers\Auth\ChangeNameController::class,'update'])->name('update');
+
+
 
 Route::get('/index', function() {
     return view('index');
@@ -32,14 +40,7 @@ Route::get('/cartera', function() {
     return view('home_cm');
 });
 
-Route::get('/graph',function() {
-    $user = \Auth::user();
-    
-    $incomes = DB::table('income')->where('u_id', $user['id'])-> get();
-    $expenses = DB::table('expenses')->where('u_id',$user['id'])->get();
 
-    return view('graph',['incomes' => $incomes],['expenses' => $expenses]);
-});
 
 Route::get('/calender', function() {
     return view('calender');
@@ -50,7 +51,9 @@ Route::get('/setting', function() {
 });
 
 
-
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/repswd', [App\Http\Controllers\Auth\ChangePasswordController::class, 'index'])->name('index');
+Route::get('/password/change', [App\Http\Controllers\Auth\ChangePasswordController::class, 'edit'])->name('edit');
+Route::post('/password/change', [App\Http\Controllers\Auth\ChangePasswordController::class, 'update'])->name('update');
+

@@ -1,0 +1,14 @@
+.card-set {
+    width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.body-set-1 {
+    width: auto;
+    height: 500px;
+    
+}
+.card-header {
+    background-color: cornflowerblue;
+    color: black;
+}

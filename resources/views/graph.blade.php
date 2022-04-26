@@ -5,12 +5,13 @@
     <nav id="home_nav_bar">
         <div class="nav_bar_2">
             <ul>
+                <!-- menu bar  -->
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square" viewBox="0 0 16 16">
                         <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
                         <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5v11z"/>
                     </svg>
-                    <button onclick="location.href= '{{ url('/home') }}'" type="button" class="btn btn-outline-secondary">INPUT</button>
+                    <button onclick="location.href= '{{ url('/home')}}'" type="button" class="btn btn-outline-secondary">INPUT</button>
                 </li>
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pie-chart-fill" viewBox="0 0 16 16">
@@ -32,6 +33,7 @@
                     </svg>
                     <button onclick="location.href= '{{ url('/setting') }}'" type="button" class="btn btn-outline-secondary">SETTING</button>
                 </li>
+                <!-- menu bar  -->
             </ul>
         </div>
     </nav>
@@ -86,10 +88,10 @@
                 <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Amount</th>
-                            <th scope="col">Date</th>
+                            <th scope="col">@sortablelink('id', 'ID')</th>
+                            <th scope="col">@sortablelink('category','CATEGORY')</th>
+                            <th scope="col">@sortablelink('amount','AMOUNT')</th>
+                            <th scope="col">@sortablelink('income_date','DATE')</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -104,7 +106,12 @@
                         <?php $count = $count + 1?>
                         @endforeach
                     </tbody>
+                    <!-- -->
                 </table>
+                <div class="paginate-space">
+                {!! $incomes->appends(\Request::except('page'))->render() !!}
+                </div>
+                
             </div>
         </div>
         <div class="col">
@@ -112,10 +119,10 @@
             <table class="table">
                     <thead>
                         <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Amount</th>
-                            <th scope="col">Date</th>
+                            <th scope="col">@sortablelink('id','ID')</th>
+                            <th scope="col">@sortablelink('category','CATEGORY')</th>
+                            <th scope="col">@sortablelink('amount','AMOUNT')</th>
+                            <th scope="col">@sortablelink('expense_date','DATE')</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -131,6 +138,10 @@
                         @endforeach
                     </tbody>
                 </table>
+                <div class="paginate">
+                    {!! $expenses->appends(\Request::except('page'))->render() !!}
+                </div>
+                
             </div>
         </div>
     </div>
@@ -216,5 +227,11 @@
 
         chart.draw(data, options);
       }
+
+        function sortFunction(chosen){
+            sortType = chosen;
+            document.getElementById("sortInput").value = sortType;
+            document.getElementById("sortInput").submit();
+        }
     </script>
 @endsection
