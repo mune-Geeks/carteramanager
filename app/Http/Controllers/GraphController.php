@@ -14,8 +14,8 @@ class GraphController extends Controller
     public function index(){
         //get user id 
         $user = \Auth::user();
-        $postsI = ModelsIncome::sortable()->where('u_id', $user['id'])->paginate(5);
-        $postsE = ModelsExpenses::sortable()->where('u_id',$user['id'])->paginate(5);
+        $postsI = ModelsIncome::sortable()->where('u_id', $user['id'])->paginate();
+        $postsE = ModelsExpenses::sortable()->where('u_id',$user['id'])->paginate();
         
         return view('graph',['incomes' => $postsI],['expenses' => $postsE]);
     }

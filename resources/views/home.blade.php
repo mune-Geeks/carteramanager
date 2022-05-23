@@ -19,13 +19,7 @@
                 </svg>
                     <button onclick="location.href= '{{ url('/graph') }}'" type="button" class="btn btn-outline-secondary">GRAPH</button>
                 </li>
-                <li>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-calendar-day" viewBox="0 0 16 16">
-                        <path d="M4.684 11.523v-2.3h2.261v-.61H4.684V6.801h2.464v-.61H4v5.332h.684zm3.296 0h.676V8.98c0-.554.227-1.007.953-1.007.125 0 .258.004.329.015v-.613a1.806 1.806 0 0 0-.254-.02c-.582 0-.891.32-1.012.567h-.02v-.504H7.98v4.105zm2.805-5.093c0 .238.192.425.43.425a.428.428 0 1 0 0-.855.426.426 0 0 0-.43.43zm.094 5.093h.672V7.418h-.672v4.105z"/>
-                        <path d="M3.5 0a.5.5 0 0 1 .5.5V1h8V.5a.5.5 0 0 1 1 0V1h1a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V3a2 2 0 0 1 2-2h1V.5a.5.5 0 0 1 .5-.5zM1 4v10a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V4H1z"/>
-                    </svg>
-                    <button onclick="location.href= '{{ url('/calender') }}'" type="button" class="btn btn-outline-secondary">CALENDER</button>
-                </li>
+                
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-gear" viewBox="0 0 16 16">
                         <path d="M8 4.754a3.246 3.246 0 1 0 0 6.492 3.246 3.246 0 0 0 0-6.492zM5.754 8a2.246 2.246 0 1 1 4.492 0 2.246 2.246 0 0 1-4.492 0z"/>
@@ -37,7 +31,7 @@
         </div>
     </nav>
     <div class="body_2">
-        <form method='POST' action="/store" name="form1">
+        <form method='POST' action="store" name="form1">
             @csrf
             <input type="hidden" name="user_id" value="{{ $user ['id'] }}">
             <div class="body_2_1">
@@ -89,22 +83,22 @@
         expense = document.form1.btnradio2.checked;
 
         if(income == true){
-            document.getElementById("cate1").innerText = "gift";
+            document.getElementById("cate1").innerText = "Gift";
             document.getElementById("cate1").value = "gift";
-            document.getElementById("cate2").innerText = "salary";
+            document.getElementById("cate2").innerText = "Salary";
             document.getElementById("cate2").value = "salary";
-            document.getElementById("cate3").innerText = "investment";
+            document.getElementById("cate3").innerText = "Investment";
             document.getElementById("cate3").value = "investment";
-            document.getElementById("cate4").innerText = "others";
+            document.getElementById("cate4").innerText = "Others";
             document.getElementById("cate4").value = "others";
         } else if(expense == true){
-            document.getElementById("cate1").innerText = "food";
+            document.getElementById("cate1").innerText = "Food";
             document.getElementById("cate1").value = "food";
-            document.getElementById("cate2").innerText = "shopping";
+            document.getElementById("cate2").innerText = "Shopping";
             document.getElementById("cate2").value = "shopping";
-            document.getElementById("cate3").innerText = "beauty";
+            document.getElementById("cate3").innerText = "Beauty";
             document.getElementById("cate3").value = "beauty";
-            document.getElementById("cate4").innerText = "others";
+            document.getElementById("cate4").innerText = "Others";
             document.getElementById("cate4").value = "others";
         } else {
 

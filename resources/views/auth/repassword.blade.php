@@ -13,10 +13,9 @@
     <div class="row justify-content-center">
         <div class="col-md-8">
             <div class="card">
-                <div class="card-header">{{ __('Change Username') }}</div>
-
+                <div class="card-header">{{ __('Change Password') }}</div>
                 <div class="card-body">
-                    <form method="POST" action="/password/change" >
+                    <form method="POST" action="/password/change" name="form2">
                             @csrf
                             <input type="hidden" name="user_id" value="{{ $user ['id'] }}">
                             

@@ -46,7 +46,6 @@ class HomeController extends Controller
                 'u_id' => $data['user_id'],'category' => $data['category'],'amount' => $data['amount'], 'expense_date' => $data['date']
             ]);
         }
-        
         return redirect()->route('home');
     }
     
